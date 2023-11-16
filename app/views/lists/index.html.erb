@@ -1,0 +1,10 @@
+<div class="background-image">
+  <div class="container">
+  <h1>Choisissez votre style pour une séance de folie</h1>
+  <ul><% @lists.each do |list| %>
+  <li><%= link_to list.name, list_path(list), class: "button" %></li>
+  <% end %>
+  </ul>
+  <%= link_to "Créer une nouvelle liste", new_list_path %>
+  </div>
+</div>

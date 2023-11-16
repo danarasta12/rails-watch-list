@@ -1,12 +1,273 @@
-// Graphical variables
+/* Graphical variables */
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-// External libraries
+/* External libraries */
 @import "bootstrap";
 @import "font-awesome";
 
-// Your CSS partials
+/* Your CSS partials */
 @import "components/index";
 @import "pages/index";
+
+/* General Styles */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  color: #ff00ff; /* Rose fluo */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  color: #00ff00; /* Vert fluo */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffff00; /* Jaune fluo */
+}
+
+/* Buttons */
+.button,
+.link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #ff00ff; /* Rose fluo */
+  color: #fff;
+  font-weight: bold;
+  border: 5px solid #00ff00; /* Bordure verte fluo */
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #00ff00; /* Fond vert fluo au survol */
+  color: #ff00ff; /* Texte rose fluo au survol */
+}
+
+.button:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #ffff00 0%, #00ffff 100%); /* Dégradé brillant */
+  z-index: -1;
+}
+
+.button:hover:before {
+  background: linear-gradient(45deg, #00ffff 0%, #ffff00 100%); /* Changement de dégradé au survol */
+}
+
+.link-button {
+  background-color: #ff00ff; /* Rose fluo */
+  color: #fff;
+  border: 5px solid #00ff00; /* Bordure verte fluo */
+  margin-top: 20px;
+}
+
+.link-button:hover {
+  background-color: #00ff00; /* Fond vert fluo au survol */
+  color: #ff00ff; /* Texte rose fluo au survol */
+}
+
+/* Background Image Styles */
+.background-image {
+  background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2918&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Cela assure que l'image de fond couvre toute la hauteur de la fenêtre */
+}
+
+/* Bookmark Styles */
+.bookmark-card {
+  background-color: #ff00ff; /* Rose fluo */
+  padding: 20px;
+  border: 5px solid #00ff00; /* Bordure verte fluo */
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookmark-info {
+  margin: 0;
+}
+
+.remove-button {
+  background-color: #ff00ff; /* Rose fluo */
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 2px solid #00ff00; /* Bordure verte fluo */
+  border-radius: 5px;
+}
+
+.remove-button:hover {
+  background-color: #00ff00; /* Fond vert fluo au survol */
+  color: #ff00ff; /* Texte rose fluo au survol */
+}
+
+/* Movie Card Styles */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #ff00ff; /* Rose fluo */
+  padding: 20px;
+  border: 5px solid #00ff00; /* Bordure verte fluo */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.movie-poster {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.movie-info {
+  text-align: left;
+}
+
+.movie-info h2 {
+  margin-bottom: 5px;
+}
+
+.movie-info p {
+  color: #fff;
+  margin: 0;
+}
+
+.movie-info p:last-child {
+  margin-bottom: 5px;
+}
+
+/* Bookmark Card Styles */
+.bookmark-info {
+  text-align: left;
+}
+
+.movie-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Bookmark Card Styles */
+.bookmark-card {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #ff00ff; /* Rose fluo */
+  padding: 20px;
+  border: 5px solid #00ff00; /* Bordure verte fluo */
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.column.small {
+  flex: 0.5; /* Pour la troisième colonne plus petite */
+}
+
+.movie-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.movie-overview, .movie-rating, .comment-text {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Animation des chiens */
+.dog {
+  position: fixed;
+  width: 200px; /* Ajuste la taille selon tes besoins */
+  height: auto;
+  bottom: 0;
+  animation: dogWalk 10s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes dogWalk {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 100vw; /* Assure que les chiens sortent complètement à droite de l'écran */
+  }
+}
+
+/* Animation des parrots */
+.parrot {
+  position: fixed;
+  width: 200px; /* Ajuste la taille selon tes besoins */
+  height: auto;
+  top: 40px;
+  animation: parrotFly 10s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes parrotFly {
+  0% {
+    transform: translate(-100px, -50%); /* Position initiale */
+  }
+  25% {
+    transform: translate(0vw, 75%); /* Balade vers la droite à 25% de l'animation */
+  }
+  40% {
+    transform: translate(0vw, -15%); /* Balade vers la droite à 25% de l'animation */
+  }
+  60% {
+    transform: translate(50vw, 80%); /* Descend à mi-chemin de l'animation */
+  }
+  75% {
+    transform: translate(75vw, 40%); /* Remonte à 75% de l'animation */
+  }
+  100% {
+    transform: translate(100vw, 0%); /* Sort complètement à droite de l'écran à la fin de l'animation */
+  }
+}
